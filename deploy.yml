@@ -1,0 +1,34 @@
+---
+- name: Deploy selected Symbol preset
+  hosts: devnet_nodes
+  remote_user: root
+  tasks:
+    - name: apt update
+      command:
+        cmd: apt update -y
+
+    - name: ensure dependencies are installed
+      package:
+        name: ["docker.io", "npm", "nodejs", "docker-compose"]
+        state: present
+
+    - name: ensure symbol-bootstrap is installed
+      command:
+        cmd: npm install -g symbol-bootstrap
+
+    - name: copy preset to nodes
+      copy:
+        src: ./preset/custom_preset.yml
+        dest: ./custom_preset.yml
+
+    - name: symbol-bootstrap config
+      command:
+        cmd: symbol-bootstrap config -p bootstrap -c ./custom_preset.yml -r
+
+    - name: symbol-bootstrap compose
+      command:
+        cmd: symbol-bootstrap compose
+
+    - name: symbol-bootstrap run
+      command:
+        cmd: symbol-bootstrap run --detached

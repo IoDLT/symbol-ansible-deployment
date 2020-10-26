@@ -1,0 +1,8 @@
+---
+- name: Run selected nodes
+  hosts: devnet_nodes
+  remote_user: root
+  tasks:
+    - name: symbol-bootstrap run
+      command:
+        cmd: symbol-bootstrap run --detached

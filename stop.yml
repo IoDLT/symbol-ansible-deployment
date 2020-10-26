@@ -1,0 +1,8 @@
+---
+- name: Stop selected nodes
+  hosts: devnet_nodes
+  remote_user: root
+  tasks:
+    - name: symbol-bootstrap stop
+      command:
+        cmd: symbol-bootstrap stop

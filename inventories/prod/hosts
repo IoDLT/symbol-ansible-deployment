@@ -1,0 +1,9 @@
+# here, you put the ips where you wish to deploy your node configs
+# sample:
+# [devnet_nodes]
+# 198.199.80.167
+# 178.128.184.107
+# [iodlt:children]
+# devnet_nodes
+# [iodlt:vars]
+# ansible_ssh_user=root
