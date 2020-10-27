@@ -8,6 +8,8 @@ Keep in mind, these only have been tested on Ubuntu 20.04 machines.  In the futu
 
 It's recommended that you modify inventories/prod/hosts with your specific network parameters.  This way, you can specify different inventories for different networks.
 
+In `preset/`, make sure to fill the contents of `preset/custom_preset.yml` with your preset before running.
+
 ```sh
 ansible-playbook <script>.yml -i inventories/prod/hosts 
 ```
