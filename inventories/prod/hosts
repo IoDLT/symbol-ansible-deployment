@@ -1,4 +1,4 @@
-# here, you put the ips where you wish to deploy your node configs
+# here, you put the ips where you wish to deploy your node configs.  You may need to change ansible_ssh_user
 # sample:
 # [devnet_nodes]
 # 198.199.80.167
